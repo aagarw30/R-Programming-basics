@@ -1,0 +1,30 @@
+Programming in R - tutorial : apply() function in R : 
+========================================================
+<i> Author: Abhinav Agrawal </i>
+
+<b> apply() </b> function in R comes handy when it comes to applying a specific operation/function on the margins (across rows or columns) of a an array or matrix.
+
+Syntax:
+apply(X, MARGIN, FUN,...)
+
+X = an array or matrix
+MARGIN can 1 indicating operation or function to be performed on rows, 2 for columns or could be expressed using combine function c(1, 2) indicates both rows and columns or basically indicating that the operation needs to be performed on all the elements of the rows and columns.
+
+FUN = Function or operation that needs to be performed
+
+... other optional arguments passed to the function
+
+```{r}
+m1 <- c(1,2,3,4,5,6,7,8) # m1 is the sequence of elements
+dim(m1) <- c(2,4) # define the dimensions of object m1 
+m1  # print the matrix m1
+```
+
+Performing apply() function on the matrix object m1
+
+```{r}
+apply(m1,1,sum) # sum operation on rows. Output would be rowsum basically
+apply(m1,2,sum) # sum operation on column. Output would be columnsum basically
+apply(m1,c(1,2), function(x) x*10) # multiplying each element by 10
+```
+
